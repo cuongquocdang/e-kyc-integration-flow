@@ -1,0 +1,9 @@
+package com.example.cardmanagementsystem.services;
+
+import com.example.cardmanagementsystem.dtos.InternationalTransactionLimitationChangedMessageDTO;
+import com.example.cardmanagementsystem.dtos.enums.NotificationResult;
+
+public interface CardNotificationService {
+
+    NotificationResult publishInternationalTransactionLimitationChangedMessage(InternationalTransactionLimitationChangedMessageDTO messageDTO);
+}
