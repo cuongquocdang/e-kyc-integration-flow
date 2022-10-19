@@ -1,6 +1,6 @@
 package com.example.cardservice.controllers;
 
-import com.example.cardservice.dtos.VendorEKYCInfoRequestDTO;
+import com.example.cardservice.dtos.VendorEKYCCallingResultDTO;
 import com.example.cardservice.services.ElectronicKnowYourCustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,9 +13,9 @@ public class ElectronicKnowYourCustomerController {
 
     private final ElectronicKnowYourCustomerService electronicKnowYourCustomerService;
 
-    @PostMapping("/vendors/{vendor}/transaction-limitations")
+    @PostMapping("/vendors/{vendor}/e-kyc-result")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void handleStatusFromVendor(@PathVariable String vendor, VendorEKYCInfoRequestDTO requestDTO) {
+    public void handleStatusFromVendor(@PathVariable String vendor, @RequestBody VendorEKYCCallingResultDTO requestDTO) {
         electronicKnowYourCustomerService.handleStatusFromVendor(vendor, requestDTO);
     }
 

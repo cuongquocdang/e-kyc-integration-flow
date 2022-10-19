@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class VendorEKYCInfoRequestDTO {
+public class VendorEKYCCallingResultDTO {
 
-    private String contractIdentifier;
-    private String eKYCResult;
+    private String callingId;
+    private String externalUserId;
+    private String result;
 }
